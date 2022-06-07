@@ -36,7 +36,7 @@ const resolvers = {
                     { title: { [Op.like]: `%${search}%` } }
                 ]
             }
-            return MoviesModel.findAll(clause)
+            return await MoviesModel.findAll(clause)
         },
         async popularMovies(_, { limit, offset, search } ) {
             const clause = {
@@ -54,7 +54,25 @@ const resolvers = {
                     { title: { [Op.like]: `%${search}%` } }
                 ]
             }
-            return MoviesModel.findAll(clause)
+            return await MoviesModel.findAll(clause)
+        },
+        async newMovies(_, { limit, offset, search } ) {
+            const clause = {
+                where: { active: true },
+                order: [
+                    ['release_date', 'DESC'],
+                ],
+            }
+            if (limit !== null && offset !== null) {
+                clause.offset = offset
+                clause.limit = limit
+            }
+            if (search) {
+                clause.where[Op.or] = [
+                    { title: { [Op.like]: `%${search}%` } }
+                ]
+            }
+            return await MoviesModel.findAll(clause)
         },
         async movie(_,{ id }) {
             return MoviesModel.findOne({

@@ -17,6 +17,7 @@ const typeDefs = gql`
         movies( limit: Int, offset: Int, search: String ): [Movie]
         topMovies( limit: Int, offset: Int, search: String ): [Movie]
         popularMovies( limit: Int, offset: Int, search: String ): [Movie]
+        newMovies( limit: Int, offset: Int, search: String ): [Movie]
         movie( id: Int! ): Movie
     }
 
