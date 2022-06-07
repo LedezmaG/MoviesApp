@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client'
 
 export const MOVIES = gql`
-    query Movies($limit: Int) {
-        movies(limit: $limit) {
+    query Movies($search: String) {
+        movies(search: $search) {
             id
             title
             poster_src

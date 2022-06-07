@@ -1,17 +1,21 @@
+import React, { useEffect, useState } from 'react'
 import { useQuery } from '@apollo/client'
-import React, { useEffect } from 'react'
+import { MOVIES } from '../../graphql/Movies';
+import { useParams } from 'react-router';
+import { MovieItem } from '../Items/MovieItem';
 
 export const MoviesSearch = () => {
 
     let {search} = useParams();
+    const [movie, setMovie] = useState()
 
     const {
         data,
         loading,
         error,
-    } = useQuery(MOVIE_BY_ID, {
+    } = useQuery(MOVIES, {
         variables: {
-            movieId: parseInt(_id),
+            search: search.toString(),
         }
     })
 
@@ -21,15 +25,7 @@ export const MoviesSearch = () => {
                 throw new Error(error)
             }
             if (data && !loading) {
-                const startsItems = [];
-                for (let i = 1; i < 11; i++) {
-                    if ( i <= data.movie.vote_average) {
-                        startsItems.push(<i className="fa-solid fa-star start-active" />)
-                    } else {
-                        startsItems.push(<i className="fa-solid fa-star start" />)
-                    }
-                }
-                setMovie({...data.movie, starts: startsItems})
+                setMovie(data.movies)
             }
         } catch (error) {
             
@@ -37,18 +33,20 @@ export const MoviesSearch = () => {
     }, [data, loading, error])
 
     return (
-        <div>
-            <Carousel 
-                data={newest}
-            />
-            <MovieSlider
-                title="Top 10"
-                data={movies}
-            />
-            <MovieSlider
-                title="Populares"
-                data={popular}
-            />
+        <div className='row movie-conteiner container'>
+            <div>
+                <h2>Resultados de busqueda: {search}</h2>
+                <div className='row'>
+                    { (movie) && movie.map( item => 
+                        <MovieItem 
+                            id={item.id}
+                            poster={item.poster_src} 
+                            title={item.title} 
+                            ranked={item.vote_average} 
+                        /> 
+                    )}
+                </div>
+            </div>
         </div>
     )
 }

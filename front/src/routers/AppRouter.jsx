@@ -4,6 +4,7 @@ import { MoviesHome } from '../components/Movies/MoviesHome'
 import { MoviesDetails } from '../components/Movies/MoviesDetails'
 import { Page404 } from '../components/Pages/Page404'
 import { NavBar } from '../components/Layout/NavBar';
+import { MoviesSearch } from '../components/Movies/MoviesSearch';
 
 export const AppRouter = () => {
 
@@ -22,6 +23,10 @@ export const AppRouter = () => {
                         <Route 
                             path="/movie/:id" 
                             element={<MoviesDetails />} 
+                        />
+                        <Route 
+                            path="/movie/search/:search" 
+                            element={<MoviesSearch />} 
                         />
                         <Route 
                             path="*" 
