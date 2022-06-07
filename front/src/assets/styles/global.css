@@ -5,22 +5,35 @@ body {
     background: linear-gradient(90deg, hsl(120,17%,76%) 30%, rgba(234,235,241,1) 60%);
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header {
+    height: 15vh;
+}
+
+.content {
+    height: 100%;
+}
+
 .main {
     background: rgba( 223, 235, 227, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );    
+    border: 1px solid rgba( 255, 255, 255, 0.18 ); 
 }
 
-.btn-app{
-    border-radius: 25px;
-    width: auto;
-    background-color: #FFFEFB;
-    size: 25px;
-    padding-left: 25px;
-    padding-right: 25px;
+.main-content {
+    flex: 1;
+}
+
+.btn-green{
+    background-color: #41D492;
+    color: white;
 }
 
 /* Navbar */
@@ -84,4 +97,17 @@ body {
 }
 .start{
     color: #BBCDC7;
+}
+
+.movie-conteiner {
+    height: 85vh;
+    margin: 0;
+}
+.movie-img {
+    width: 60%;
+    border-radius: 25px;
+}
+
+.cw-50 {
+    width: 50px;
 }

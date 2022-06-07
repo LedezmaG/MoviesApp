@@ -43,3 +43,19 @@ export const POPULAR_MOVIES = gql`
         }
     }
 `
+
+export const MOVIE_BY_ID = gql`
+    query Movie($movieId: Int!) {
+        movie(id: $movieId) {
+            id
+            title
+            overview
+            backdrop_src
+            poster_src
+            release_date
+            vote_count
+            vote_average
+            popularity
+        }
+    }
+`

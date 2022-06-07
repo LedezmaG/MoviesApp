@@ -9,12 +9,9 @@ import './assets/styles/global.css'
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      <div className='px-5 main'>
-        <div className='row'>
-        <NavBar />
-        </div>
-        <MoviesHome />
-      </div>
+      {/* <div className='px-5 main'> */}
+        <AppRouter />
+      {/* </div> */}
     </ApolloProvider>
   );
 }
