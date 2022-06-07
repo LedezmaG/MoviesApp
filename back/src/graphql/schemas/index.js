@@ -7,6 +7,7 @@ const typeDefs = gql`
         title: String
         overview: String
         poster_src: String
+        backdrop_src: String
         release_date: String
         vote_count: Int
         vote_average: Int

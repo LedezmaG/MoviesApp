@@ -19,6 +19,10 @@ const MoviesModel = Connection.define('catalog_movies', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    backdrop_src: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     release_date: {
         type: DataTypes.DATE,
         allowNull: false,
