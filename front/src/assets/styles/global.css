@@ -1,0 +1,87 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+body {
+    background: rgb(223,235,227);
+    background: linear-gradient(90deg, hsl(120,17%,76%) 30%, rgba(234,235,241,1) 60%);
+}
+
+.main {
+    background: rgba( 223, 235, 227, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );    
+}
+
+.btn-app{
+    border-radius: 25px;
+    width: auto;
+    background-color: #FFFEFB;
+    size: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+/* Navbar */
+._navbar {
+    background-color: transparent;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.search {
+    border-radius: 20px;
+    border: none;
+    color: #D4D4D7;
+}
+
+.movieSlider {
+    overflow-x: scroll;
+    display: flex;
+    padding-bottom: 5px;
+}
+.movieSlider::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.movieSlider::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+.movieSlider::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+.movieSlider::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+.movie-card {
+    background-color: white;
+    padding: 0;
+    border-radius: 25px;
+    margin: 0 10px;
+}
+
+.movie-card-body {
+    padding: 10px;
+}
+
+.movie-card-img {
+    max-height: 250px;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.image-gallery-slide .image-gallery-image {
+    width: 100%;
+    height: 40vh;
+    object-fit: fill;
+}
+
+.start-active{
+    color: #40D391;
+}
+.start{
+    color: #BBCDC7;
+}
